@@ -7,6 +7,7 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Services from './sections/Services';
 import Cases from './sections/Cases';
+import News from './sections/News';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
@@ -44,6 +45,7 @@ function App() {
         <Hero />
         <About />
         <Services />
+        <News />
         <Cases />
         <Contact />
       </main>

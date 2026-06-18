@@ -6,6 +6,7 @@ const navLinks = [
   { name: '首页', href: '#hero' },
   { name: '关于', href: '#about' },
   { name: '服务', href: '#services' },
+  { name: '快讯', href: '#news' },
   { name: '案例', href: '#cases' },
   { name: '联系', href: '#contact' },
 ];
