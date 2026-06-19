@@ -105,11 +105,11 @@ export default function Services() {
             我们的服务
           </span>
           <h2 className="section-title mb-6">
-            全方位AI赋能
-            <span className="text-brand-red">解决方案</span>
+            落地可用的
+            <span className="text-brand-red">AI解决方案</span>
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            从策略到执行，从技术到运营，我们提供端到端的AI转型服务，助力企业在智能时代抢占先机
+            从策略到执行，从技术到运营——方案要落地，效果看得见
           </p>
         </div>
 
