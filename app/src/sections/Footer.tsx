@@ -104,7 +104,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="flex flex-col md:flex-row items-center gap-4 text-white/40 text-xs">
-            <p>© 2024 盛世天宜品牌管理有限公司. 保留所有权利.</p>
+            <p>© 2026 盛世天宜品牌管理有限公司. 保留所有权利.</p>
             <div className="hidden md:block w-1 h-1 bg-white/20 rounded-full" />
             <div className="flex items-center gap-4">
               <a href="#" className="hover:text-white/60 transition-colors">

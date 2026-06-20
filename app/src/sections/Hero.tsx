@@ -162,7 +162,7 @@ export default function Hero() {
             >
               携手AI信任资产架构师，预见未来。
               <br />
-              策略引领 · 技术赋能 · 长期主义
+              策略引领 · 技术落地 · 长期主义
             </p>
 
             {/* CTA Button */}
