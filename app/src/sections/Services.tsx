@@ -1,49 +1,103 @@
 import { useEffect, useRef } from 'react';
-import { Globe, Bot, Workflow, TrendingUp, ArrowRight } from 'lucide-react';
+import { Search, Bot, Globe, BarChart3, GraduationCap, ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const dscItems = [
+  {
+    letter: 'D',
+    title: '策略深度',
+    subtitle: 'Depth',
+    desc: '北极星指标工作法，围绕品牌核心商业目标反向构建AI信任链',
+  },
+  {
+    letter: 'S',
+    title: '信源体系',
+    subtitle: 'System',
+    desc: '官网+标杆案例+白皮书，构建权威信源铁三角',
+  },
+  {
+    letter: 'C',
+    title: '闭环验证',
+    subtitle: 'Closed-loop',
+    desc: '蜂巢协同系统，全链路数据监测与策略迭代',
+  },
+];
+
+const dssItems = [
+  {
+    letter: 'D',
+    title: '语义深度',
+    subtitle: 'Depth',
+    desc: '问题定义→逻辑分析→案例支撑→结论，提升AI理解效率',
+  },
+  {
+    letter: 'S',
+    title: '数据支持',
+    subtitle: 'Support',
+    desc: '所有核心观点标注明确来源，确保信息可验证',
+  },
+  {
+    letter: 'S',
+    title: '权威来源',
+    subtitle: 'Source',
+    desc: '行业机构共创、官方白皮书、高权重平台背书',
+  },
+];
+
 const services = [
   {
-    icon: Globe,
-    title: '生成式引擎优化 (GEO)',
-    description: '让AI推荐您的品牌。我们优化内容结构和语义标记，提升在ChatGPT、Claude等AI引擎中的推荐率。',
-    features: ['语义优化', '知识图谱构建', 'AI可见性分析'],
+    icon: Search,
+    module: 'A',
+    title: '品牌AI认知资产审计与战略规划',
+    description: '诊断品牌AI认知现状，扫描线下活动、案例、荣誉等资产，转化为高价值信源。',
+    deliverables: ['《AI GEO健康度诊断报告》', '《AI认知资产构建战略路线图》'],
     color: 'from-red-500/10 to-transparent',
   },
   {
     icon: Bot,
-    title: 'AI智能体定制',
-    description: '为企业量身打造专属AI助手，从客服机器人到内部知识库助手，提升运营效率。',
-    features: ['多轮对话设计', '知识库集成', '持续学习优化'],
+    module: 'B',
+    title: 'AI智能体工作流与品牌知识库搭建',
+    description: '设计品牌专属AI智能体交互逻辑，搭建覆盖品牌故事、核心业务、标杆案例的结构化内容库。',
+    deliverables: ['智能体交互原型', '结构化品牌知识图谱', '初期内容库'],
     color: 'from-blue-500/10 to-transparent',
   },
   {
-    icon: Workflow,
-    title: '自动化工作流',
-    description: '打通数据孤岛，构建智能化业务流程，让重复性工作自动化完成。',
-    features: ['流程梳理', '系统集成', 'RPA实施'],
+    icon: Globe,
+    module: 'C',
+    title: '全托管GEO优化与运营服务',
+    description: '内容生产、信源建设、全平台投放、数据监测、策略迭代全流程托管。',
+    deliverables: ['内容生产', '信源建设', '全平台投放', '数据监测', '策略迭代'],
     color: 'from-green-500/10 to-transparent',
   },
   {
-    icon: TrendingUp,
-    title: '品牌运营服务',
-    description: '全渠道品牌内容策略与执行，构建品牌数字资产，提升市场影响力。',
-    features: ['内容策略', '社媒运营', '数据分析'],
+    icon: BarChart3,
+    module: 'D',
+    title: '人工智能一体化产业落地服务',
+    description: '从AI战略咨询、智能体开发、知识库部署到运营培训的全链路一体化解决方案。',
+    deliverables: ['食品溯源', '大健康', '跨境品牌', '产业场景适配'],
     color: 'from-purple-500/10 to-transparent',
+  },
+  {
+    icon: GraduationCap,
+    module: 'E',
+    title: 'GEO技能培训与工具赋能',
+    description: '帮助品牌内部团队掌握GEO基础能力，交付培训手册、工具账号、定制化创作模板。',
+    deliverables: ['培训手册', '工具账号', '定制化创作模板'],
+    color: 'from-orange-500/10 to-transparent',
   },
 ];
 
 export default function Services() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
+  const frameworkRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation
       gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: 50 },
@@ -60,7 +114,22 @@ export default function Services() {
         }
       );
 
-      // Cards stagger animation
+      gsap.fromTo(
+        frameworkRef.current,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'expo.out',
+          scrollTrigger: {
+            trigger: frameworkRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+
       const cards = cardsRef.current?.children;
       if (cards) {
         gsap.fromTo(
@@ -71,7 +140,7 @@ export default function Services() {
             y: 0,
             rotateY: 0,
             duration: 0.8,
-            stagger: 0.15,
+            stagger: 0.12,
             ease: 'expo.out',
             scrollTrigger: {
               trigger: cardsRef.current,
@@ -102,71 +171,122 @@ export default function Services() {
         {/* Section Header */}
         <div ref={titleRef} className="text-center mb-16 md:mb-20">
           <span className="inline-block text-brand-red text-sm font-medium tracking-wider uppercase mb-4">
-            我们的服务
+            核心方法论
           </span>
           <h2 className="section-title mb-6">
-            落地可用的
-            <span className="text-brand-red">AI解决方案</span>
+            DSC策略原则 ×
+            <span className="text-brand-red"> DSS技术框架</span>
           </h2>
           <p className="section-subtitle max-w-2xl mx-auto">
-            从策略到执行，从技术到运营——方案要落地，效果看得见
+            策略引领 + 技术赋能 —— 让每一次AI推荐都承载明确的商业价值
           </p>
         </div>
 
-        {/* Service Cards */}
+        {/* Framework: DSC + DSS */}
+        <div ref={frameworkRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          {/* DSC */}
+          <div className="bg-white p-8 border border-gray-100">
+            <h3 className="text-lg font-semibold text-brand-black mb-6 flex items-center gap-2">
+              <span className="w-8 h-8 bg-brand-red text-white text-sm font-bold flex items-center justify-center">S</span>
+              DSC 战略层原则
+            </h3>
+            <div className="space-y-4">
+              {dscItems.map((item) => (
+                <div key={item.letter} className="flex gap-4 items-start">
+                  <div className="w-10 h-10 bg-brand-red/10 text-brand-red font-bold text-lg flex items-center justify-center flex-shrink-0">
+                    {item.letter}
+                  </div>
+                  <div>
+                    <p className="font-medium text-brand-black">
+                      {item.title} <span className="text-brand-gray2 text-sm font-normal">({item.subtitle})</span>
+                    </p>
+                    <p className="text-brand-gray1 text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* DSS */}
+          <div className="bg-white p-8 border border-gray-100">
+            <h3 className="text-lg font-semibold text-brand-black mb-6 flex items-center gap-2">
+              <span className="w-8 h-8 bg-brand-red text-white text-sm font-bold flex items-center justify-center">S</span>
+              DSS 执行层框架
+            </h3>
+            <div className="space-y-4">
+              {dssItems.map((item) => (
+                <div key={item.letter + item.title} className="flex gap-4 items-start">
+                  <div className="w-10 h-10 bg-brand-red/10 text-brand-red font-bold text-lg flex items-center justify-center flex-shrink-0">
+                    {item.letter}
+                  </div>
+                  <div>
+                    <p className="font-medium text-brand-black">
+                      {item.title} <span className="text-brand-gray2 text-sm font-normal">({item.subtitle})</span>
+                    </p>
+                    <p className="text-brand-gray1 text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Service Modules */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl font-semibold text-brand-black mb-4">
+            核心服务模块
+          </h3>
+          <p className="text-brand-gray1 max-w-xl mx-auto">
+            从诊断到落地，从内容到运营，5大模块覆盖全链路
+          </p>
+        </div>
+
         <div
           ref={cardsRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {services.map((service) => {
             const Icon = service.icon;
             return (
               <div
-                key={service.title}
-                className="group relative bg-white p-8 lg:p-10 transition-all duration-500 hover:shadow-card-hover hover:-translate-y-2"
-                style={{
-                  perspective: '1000px',
-                  transformStyle: 'preserve-3d',
-                }}
+                key={service.module}
+                className="group relative bg-white p-8 transition-all duration-500 hover:shadow-card-hover hover:-translate-y-2 border border-gray-100"
               >
-                {/* Background gradient */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 />
 
-                {/* Content */}
                 <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-brand-red/10 flex items-center justify-center transition-all duration-500 group-hover:bg-brand-red group-hover:scale-110">
-                      <Icon className="w-8 h-8 text-brand-red transition-colors duration-500 group-hover:text-white" />
+                  {/* Module badge + Icon */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-12 h-12 bg-brand-red/10 flex items-center justify-center transition-all duration-500 group-hover:bg-brand-red group-hover:scale-110">
+                      <Icon className="w-6 h-6 text-brand-red transition-colors duration-500 group-hover:text-white" />
                     </div>
+                    <span className="text-xs font-bold text-brand-red bg-brand-red/10 px-2 py-1">
+                      模块 {service.module}
+                    </span>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl lg:text-2xl font-semibold text-brand-black mb-4">
+                  <h4 className="text-lg font-semibold text-brand-black mb-3 group-hover:text-brand-red transition-colors duration-300">
                     {service.title}
-                  </h3>
+                  </h4>
 
-                  {/* Description */}
-                  <p className="text-brand-gray1 leading-relaxed mb-6">
+                  <p className="text-brand-gray1 text-sm leading-relaxed mb-5">
                     {service.description}
                   </p>
 
-                  {/* Features */}
-                  <ul className="space-y-2 mb-8">
-                    {service.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-center gap-2 text-sm text-brand-gray2"
+                  {/* Deliverables */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {service.deliverables.map((d) => (
+                      <span
+                        key={d}
+                        className="text-xs px-2 py-1 bg-gray-100 text-brand-gray2 group-hover:bg-brand-red/10 group-hover:text-brand-red transition-colors duration-300"
                       >
-                        <div className="w-1.5 h-1.5 bg-brand-red rounded-full" />
-                        {feature}
-                      </li>
+                        {d}
+                      </span>
                     ))}
-                  </ul>
+                  </div>
 
-                  {/* CTA */}
                   <a
                     href="#contact"
                     onClick={(e) => {
@@ -183,7 +303,6 @@ export default function Services() {
                   </a>
                 </div>
 
-                {/* Border animation */}
                 <div className="absolute bottom-0 left-0 w-0 h-1 bg-brand-red transition-all duration-500 group-hover:w-full" />
               </div>
             );

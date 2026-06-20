@@ -5,50 +5,46 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const milestones = [
+  {
+    year: '2015-2020',
+    title: '奠基期',
+    desc: '以前沿创意与精准执行为核心，服务保时捷、华润、华侨城等120+知名品牌，奠定"策略-创意-执行"一体化服务基因。',
+  },
+  {
+    year: '2021-2023',
+    title: '数字化融合期',
+    desc: '率先将XR虚拟制作、AI数据洞察等技术应用于保时捷发布会、华侨城嘉年华等标杆项目，完成从传统策划到"技术驱动创意"的转型。',
+  },
+  {
+    year: '2024-2025',
+    title: 'AI赋能探索期',
+    desc: '基于全链路服务中积累的海量用户行为与转化数据，内部孵化AI应用，用于用户偏好分析、KOL精准匹配、内容创意生成。',
+  },
+  {
+    year: '2026',
+    title: 'AI GEO战略升级期',
+    desc: '正式成立"盛世天宜AI研究院"，推出"人工智能一体化服务"产业落地解决方案，构建AI智能体工作流+GEO品牌运营系统化服务能力。',
+  },
+];
+
+const qualifications = [
+  '大型群众性活动安全许可协调经验',
+  '知识产权管理体系认证',
+  '政府采购供应商库准入资质',
+  '互联网营销资质、数据安全合规认证',
+  '25人核心AI技术团队',
+  '自研AI引用监测工具',
+];
+
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const redBlockRef = useRef<HTMLDivElement>(null);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const qualRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Red block animation
-      gsap.fromTo(
-        redBlockRef.current,
-        { scale: 0, rotation: -10 },
-        {
-          scale: 1,
-          rotation: 0,
-          duration: 0.8,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Image 3D reveal animation
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0, x: 100, rotateY: -15 },
-        {
-          opacity: 1,
-          x: 0,
-          rotateY: 0,
-          duration: 1,
-          ease: 'expo.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 70%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Content animation
       const contentElements = contentRef.current?.children;
       if (contentElements) {
         gsap.fromTo(
@@ -62,35 +58,52 @@ export default function About() {
             ease: 'expo.out',
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 60%',
+              start: 'top 70%',
               toggleActions: 'play none none reverse',
             },
           }
         );
       }
 
-      // Parallax effect on scroll
-      gsap.to(imageRef.current, {
-        y: -50,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      });
+      if (timelineRef.current) {
+        const items = timelineRef.current.children;
+        gsap.fromTo(
+          items,
+          { opacity: 0, x: -30 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.5,
+            stagger: 0.12,
+            ease: 'expo.out',
+            scrollTrigger: {
+              trigger: timelineRef.current,
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      }
 
-      gsap.to(redBlockRef.current, {
-        rotation: 5,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      });
+      if (qualRef.current) {
+        const items = qualRef.current.children;
+        gsap.fromTo(
+          items,
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.4,
+            stagger: 0.08,
+            ease: 'expo.out',
+            scrollTrigger: {
+              trigger: qualRef.current,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -103,26 +116,45 @@ export default function About() {
       className="relative py-24 md:py-32 bg-white overflow-hidden"
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-center">
-          {/* Content */}
-          <div ref={contentRef} className="relative z-10 lg:pr-16 order-2 lg:order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Left: Content */}
+          <div ref={contentRef}>
             <span className="inline-block text-brand-red text-sm font-medium tracking-wider uppercase mb-4">
               关于我们
             </span>
-            
+
             <h2 className="section-title mb-6">
-              策略引领 · 技术落地 ·
+              深耕品牌服务
+              <span className="text-brand-red">11年</span>
               <br />
-              <span className="text-brand-red">长期主义</span>
+              升级AI GEO战略服务商
             </h2>
-            
+
             <p className="section-subtitle mb-6">
-              盛世天宜品牌管理有限公司是AI时代的品牌护城河构建者。我们深耕GEO服务、智能体开发、自动化工作流定制及品牌运营服务，用落地的AI技术解决真实业务问题，帮企业在智能时代建立可持续的竞争优势。
+              深圳盛世天宜品牌管理有限公司，2015年成立，2026年正式升级为"AI GEO战略服务商"与"AI时代品牌信任资产架构师"。聚焦政企机构、高端消费品牌、新兴消费品牌三大核心客群。
             </p>
-            
+
             <p className="text-brand-gray2 leading-relaxed mb-8">
-              我们相信，在AI重塑商业格局的时代，品牌需要构建自己的"数字护城河"——通过生成式引擎优化（GEO）提升AI可见性，通过智能体部署提升运营效率，通过自动化工作流把人从重复劳动中解放出来，通过精准的品牌运营建立市场影响力。
+              我们不仅是活动策划与品牌运营的执行者，更是帮助品牌在DeepSeek、豆包、腾讯元宝、文心一言、Kimi等主流生成式AI平台实现"提问即曝光、答案即转化"的信息架构师与信任资产构建者。
             </p>
+
+            {/* Qualifications */}
+            <div className="mb-8">
+              <h4 className="text-sm font-semibold text-brand-black mb-4 uppercase tracking-wider">
+                核心资质
+              </h4>
+              <div ref={qualRef} className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {qualifications.map((q) => (
+                  <div
+                    key={q}
+                    className="flex items-center gap-2 text-sm text-brand-gray2"
+                  >
+                    <div className="w-1.5 h-1.5 bg-brand-red rounded-full flex-shrink-0" />
+                    {q}
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <a
               href="#services"
@@ -132,44 +164,33 @@ export default function About() {
               }}
               className="group inline-flex items-center gap-2 text-brand-red font-medium hover:gap-4 transition-all duration-300"
             >
-              了解更多关于我们
+              了解我们的服务
               <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-2" />
             </a>
           </div>
 
-          {/* Image */}
-          <div className="relative order-1 lg:order-2 lg:pl-8">
-            {/* Red decorative block */}
-            <div
-              ref={redBlockRef}
-              className="absolute -bottom-6 -left-6 w-48 h-48 bg-brand-red/10 -z-10"
-              style={{ willChange: 'transform' }}
-            />
-            
-            {/* Main image */}
-            <div
-              ref={imageRef}
-              className="relative overflow-hidden group"
-              style={{
-                perspective: '800px',
-                transformStyle: 'preserve-3d',
-                willChange: 'transform',
-              }}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src="/images/about-us.jpg"
-                  alt="关于盛世天宜"
-                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-brand-red/0 transition-colors duration-300 group-hover:bg-brand-red/10" />
-              </div>
-              
-              {/* Shadow effect */}
-              <div 
-                className="absolute -bottom-4 -right-4 w-full h-full bg-brand-red/20 -z-10 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"
-              />
+          {/* Right: Timeline */}
+          <div>
+            <h4 className="text-sm font-semibold text-brand-black mb-8 uppercase tracking-wider">
+              发展历程
+            </h4>
+            <div ref={timelineRef} className="relative pl-8 border-l-2 border-brand-red/20 space-y-8">
+              {milestones.map((m, index) => (
+                <div key={m.year} className="relative">
+                  {/* Dot */}
+                  <div className="absolute -left-[2.35rem] top-1 w-4 h-4 bg-brand-red rounded-full border-4 border-white shadow-sm" />
+
+                  <div className="bg-brand-gray4 p-5 transition-all duration-300 hover:bg-brand-red/5 hover:shadow-sm">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-brand-red font-bold text-lg">{m.year}</span>
+                      <span className="text-brand-black font-medium">{m.title}</span>
+                    </div>
+                    <p className="text-brand-gray1 text-sm leading-relaxed">
+                      {m.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -6,8 +6,9 @@ const navLinks = [
   { name: '首页', href: '#hero' },
   { name: '关于', href: '#about' },
   { name: '服务', href: '#services' },
-  { name: '快讯', href: '#news' },
   { name: '案例', href: '#cases' },
+  { name: '快讯', href: '#news' },
+  { name: 'FAQ', href: '#faq' },
   { name: '联系', href: '#contact' },
 ];
 
@@ -98,7 +99,7 @@ export default function Navbar() {
               }}
               className="group relative inline-flex items-center gap-2 bg-brand-red text-white px-6 py-3 text-sm font-medium overflow-hidden transition-all duration-300 hover:shadow-btn-hover hover:-translate-y-0.5"
             >
-              <span className="relative z-10">开始对话</span>
+              <span className="relative z-10">GEO自检</span>
               <ArrowRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
               <div className="absolute inset-0 bg-black transition-transform duration-300 -translate-x-full group-hover:translate-x-0" />
             </a>
@@ -145,7 +146,7 @@ export default function Navbar() {
                     }}
                     className="flex items-center justify-center gap-2 w-full bg-brand-red text-white py-4 font-medium"
                   >
-                    开始对话
+                    GEO自检
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </div>

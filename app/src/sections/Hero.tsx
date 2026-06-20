@@ -1,17 +1,18 @@
-import { useEffect, useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Search } from 'lucide-react';
 import gsap from 'gsap';
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLAnchorElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation
       gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: 50, clipPath: 'inset(0 100% 0 0)' },
@@ -25,7 +26,6 @@ export default function Hero() {
         }
       );
 
-      // Subtitle animation
       gsap.fromTo(
         subtitleRef.current,
         { opacity: 0, y: 30 },
@@ -38,20 +38,31 @@ export default function Hero() {
         }
       );
 
-      // CTA button animation
       gsap.fromTo(
-        ctaRef.current,
-        { opacity: 0, scale: 0.8 },
+        searchRef.current,
+        { opacity: 0, y: 20, scale: 0.95 },
         {
           opacity: 1,
+          y: 0,
           scale: 1,
           duration: 0.7,
           delay: 1.1,
-          ease: 'elastic.out(1, 0.5)',
+          ease: 'expo.out',
         }
       );
 
-      // Image parallax animation
+      gsap.fromTo(
+        statsRef.current,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          delay: 1.4,
+          ease: 'expo.out',
+        }
+      );
+
       gsap.fromTo(
         imageRef.current,
         { opacity: 0, y: 100, scale: 1.1 },
@@ -69,13 +80,12 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // Parallax scroll effect
   useEffect(() => {
     const handleScroll = () => {
       if (!imageRef.current || !titleRef.current) return;
       const scrollY = window.scrollY;
       const maxScroll = window.innerHeight * 0.5;
-      
+
       if (scrollY <= maxScroll) {
         const progress = scrollY / maxScroll;
         gsap.to(imageRef.current, {
@@ -119,7 +129,6 @@ export default function Hero() {
           alt="Hero Background"
           className="w-full h-full object-cover"
         />
-        {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
       </div>
@@ -150,9 +159,9 @@ export default function Hero() {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
               style={{ willChange: 'transform, opacity' }}
             >
-              构建AI时代的
+              AI时代的
               <br />
-              <span className="text-brand-red">品牌护城河</span>
+              <span className="text-brand-red">品牌信任资产架构师</span>
             </h1>
 
             {/* Subtitle */}
@@ -160,25 +169,47 @@ export default function Hero() {
               ref={subtitleRef}
               className="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-xl"
             >
-              携手AI信任资产架构师，预见未来。
+              11年品牌战略经验 × AI GEO生成式引擎优化
               <br />
-              策略引领 · 技术落地 · 长期主义
+              让品牌成为AI的首选答案
             </p>
 
-            {/* CTA Button */}
-            <a
-              ref={ctaRef}
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToContact();
-              }}
-              className="group relative inline-flex items-center gap-3 bg-brand-red text-white px-8 py-4 text-lg font-medium overflow-hidden transition-all duration-300 hover:shadow-btn-hover hover:-translate-y-1"
-            >
-              <span className="relative z-10">立即开始</span>
-              <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-2" />
-              <div className="absolute inset-0 bg-black transition-transform duration-300 -translate-x-full group-hover:translate-x-0" />
-            </a>
+            {/* AI Search Box */}
+            <div ref={searchRef} className="mb-8">
+              <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
+                <div className="relative flex-1">
+                  <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+                  <input
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="输入品牌名，检测AI搜索中的可见性"
+                    className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 text-base focus:outline-none focus:border-brand-red/60 focus:bg-white/15 transition-all duration-300"
+                  />
+                </div>
+                <button
+                  onClick={() => {
+                    if (query.trim()) {
+                      scrollToContact();
+                    }
+                  }}
+                  className="group relative inline-flex items-center justify-center gap-2 bg-brand-red text-white px-8 py-4 text-base font-medium overflow-hidden transition-all duration-300 hover:shadow-btn-hover hover:-translate-y-1 whitespace-nowrap"
+                >
+                  <span className="relative z-10">立即检测</span>
+                  <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-2" />
+                  <div className="absolute inset-0 bg-black transition-transform duration-300 -translate-x-full group-hover:translate-x-0" />
+                </button>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div ref={statsRef} className="flex flex-wrap gap-6 text-white/60 text-sm">
+              <span>深耕品牌服务 <strong className="text-white">11年</strong></span>
+              <span className="hidden sm:inline text-white/30">|</span>
+              <span>服务 <strong className="text-white">120+</strong> 知名品牌</span>
+              <span className="hidden sm:inline text-white/30">|</span>
+              <span>覆盖 <strong className="text-white">5大</strong> 主流AI平台</span>
+            </div>
           </div>
         </div>
       </div>
