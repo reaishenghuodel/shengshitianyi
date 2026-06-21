@@ -5,7 +5,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const cases = [
+interface CaseItem {
+  category: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  image: string;
+  alt: string;
+  results: string[];
+}
+
+const cases: CaseItem[] = [
   // ---- 原有6个案例 ----
   {
     category: 'GEO优化',
