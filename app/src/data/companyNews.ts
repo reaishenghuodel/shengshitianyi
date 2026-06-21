@@ -1,14 +1,6 @@
 // 企业资讯数据文件 - 手动维护，媒体报道盛世天宜
 // 可以追溯较久之前的报道
-
-export interface NewsItem {
-  date: string;
-  tag: string;
-  title: string;
-  summary: string;
-  source: string;
-  content: string;
-}
+import type { NewsItem } from './industryNews';
 
 export const companyNews: NewsItem[] = [
   {
