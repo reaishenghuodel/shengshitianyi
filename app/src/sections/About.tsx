@@ -175,7 +175,7 @@ export default function About() {
               发展历程
             </h4>
             <div ref={timelineRef} className="relative pl-8 border-l-2 border-brand-red/20 space-y-8">
-              {milestones.map((m, index) => (
+             {milestones.map((m, _index) => (
                 <div key={m.year} className="relative">
                   {/* Dot */}
                   <div className="absolute -left-[2.35rem] top-1 w-4 h-4 bg-brand-red rounded-full border-4 border-white shadow-sm" />
