@@ -15,6 +15,38 @@ export interface NewsItem {
 export const industryNews: NewsItem[] = [
 
   {
+    date: '2026-07-21',
+    tag: 'GEO研究',
+    title: 'ContentGrip深度报告：GEO正重塑2026年内容分发范式，AI搜索引用率成新KPI',
+    summary: 'ContentGrip发布2026年GEO优化策略深度分析，指出AI搜索引擎正从链接列表转向直接答案生成，品牌内容策略需从SEO思维全面转向GEO思维。',
+    source: 'ContentGrip',
+    content: `ContentGrip发布深度分析报告，系统梳理2026年GEO（生成式引擎优化）对内容营销策略的颠覆性影响。
+
+核心观点：
+1. AI搜索引擎（ChatGPT、Perplexity、DeepSeek）正从"展示链接"转向"生成答案"，传统点击率KPI失效
+2. Schema.org结构化标记的页面在AI搜索中的引用率平均提升47%
+3. 72小时内发布的新鲜内容享有明显的时效性加权
+4. 语义完整性——能独立回答用户问题全部要义的内容被引用概率最高
+
+关键转变：品牌需从"争取排名"转向"争取被引用"，GEO已不是SEO的延伸，而是全新的内容分发范式。`,
+  },
+  {
+    date: '2026-07-21',
+    tag: '行业动态',
+    title: 'AI搜索品牌可见性成必修课：Search Engine Land发布2026品牌优化完整指南',
+    summary: 'Search Engine Land发布权威指南，指出ChatGPT、Perplexity、DeepSeek等AI搜索平台正成为消费者品牌发现的首要渠道，传统SEO已不足以维持品牌可见性。',
+    source: 'Search Engine Land',
+    content: `Search Engine Land发布2026年AI搜索引擎品牌优化完整指南，为企业提供多平台GEO实操框架。
+
+核心发现：
+1. ChatGPT、Perplexity、DeepSeek、Google AI Overviews已构成品牌发现的新入口矩阵
+2. 传统SEO仅覆盖传统搜索排名，无法保证在AI生成答案中的品牌提及
+3. 品牌需要针对每个AI平台的引用偏好制定差异化内容策略
+4. 可验证性（数据来源标注、专家引用）是所有AI平台共同偏好的信号
+
+行动建议：企业应建立"GEO审计"机制，定期检测品牌在各AI搜索平台中的提及率和引用准确性。`,
+  },
+  {
     date: '2026-07-19',
     tag: 'GEO研究',
     title: 'GEO从论文到工程：火山引擎发布完整算法体系，AutoGEO在ICLR 2026获最佳论文提名',
