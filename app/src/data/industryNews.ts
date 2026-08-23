@@ -14,6 +14,67 @@ export interface NewsItem {
 // 定时任务会自动往这个数组顶部追加新条目
 export const industryNews: NewsItem[] = [
   {
+    date: '2026-08-23',
+    tag: 'GEO行业',
+    title: 'Search Engine Journal发布GEO优化权威指南，15大策略助力品牌抢占AI搜索入口',
+    summary: 'Search Engine Journal发布全面GEO优化指南，系统梳理15大生成式引擎优化策略。报告指出GEO已从学术概念演进为主流SEO实践，品牌需加速从传统SEO向GEO转型。',
+    source: 'Search Engine Journal',
+    content: `Search Engine Journal发布GEO（生成式引擎优化）权威指南，系统梳理15大优化策略。
+
+核心要点：
+1. GEO定义：优化内容使其成为AI生成回答的首选引用源，区别于传统Google排名优化
+2. 权威写作：AI引擎偏好引用权威、结构化、有数据支撑的内容
+3. 统计数据：添加具体数据和统计信息可显著提升AI引用率
+4. 来源引用：引用可信来源和行业报告增强内容可信度
+5. 多平台覆盖：需同时优化ChatGPT、Perplexity、Gemini等多AI搜索平台
+
+行业趋势：
+- GEO已从2024年学术论文概念演进为2025-2026年主流SEO实践
+- Shopify等电商平台已开始提供GEO优化指南
+- 品牌方需建立专门的GEO优化团队或委托专业服务商`,
+  },
+  {
+    date: '2026-08-23',
+    tag: 'AI搜索',
+    title: 'ChatGPT Search正式成为Google搜索有力竞争者，品牌需重新定义搜索可见度',
+    summary: "Barron's分析显示ChatGPT已成为特定搜索品类的合法Google替代方案。品牌需优化以在ChatGPT引用结果中出现，搜索市场格局正在发生根本性变化。",
+    source: "Barron's / Similarweb",
+    content: `Barron's最新分析显示，ChatGPT Search已成为Google搜索的有力竞争者。
+
+市场变化：
+1. 搜索替代：ChatGPT在信息查询、产品研究等品类已成为Google的合法替代
+2. 流量转移：Similarweb数据显示AI搜索引荐流量持续增长
+3. 品牌机遇：品牌可通过GEO优化在ChatGPT回答中获得高曝光
+4. 电商短板：但AI搜索在电商产品搜索方面仍存在明显不足
+5. 竞争格局：ChatGPT、Perplexity、Gemini形成AI搜索三强
+
+品牌行动建议：
+- 立即监测品牌在ChatGPT搜索结果中的出现情况
+- 针对ChatGPT的引用偏好优化品牌内容
+- 建立跨AI搜索平台的品牌可见度监测体系`,
+  },
+  {
+    date: '2026-08-23',
+    tag: 'AI智能体',
+    title: 'McKinsey：AI Agent是生成式AI下一个前沿，企业需提前布局智能体战略',
+    summary: 'McKinsey发布报告指出AI Agent是超越聊天机器人的下一次重大进化，具备自主规划、推理和任务执行能力。企业需提前布局AI Agent战略以获取竞争优势。',
+    source: 'McKinsey & Company',
+    content: `McKinsey最新报告将AI Agent定位为生成式AI的下一个重大前沿。
+
+核心观点：
+1. 能力跃升：AI Agent超越传统聊天机器人，具备自主规划、推理和任务执行能力
+2. 企业价值：可应用于销售、客服、营销、运营等多个业务职能
+3. 部署策略：企业应从小规模试点开始，逐步扩展Agent应用场景
+4. 技术挑战：可靠性、安全性、与现有系统集成仍是主要障碍
+5. 市场前景：Agent-to-Agent通信和多Agent系统将成为下一波浪潮
+
+企业行动指南：
+- 评估业务流程中适合Agent自动化的环节
+- 选择合适的Agent平台（如Salesforce Agentforce、Microsoft Copilot）
+- 建立Agent治理框架和安全合规机制
+- 将AI Agent场景纳入GEO优化策略`,
+  },
+  {
     date: '2026-08-22',
     tag: 'GEO行业',
     title: 'Google正式推出AI Mode搜索功能，GEO优化迎来新变局',
