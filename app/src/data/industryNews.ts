@@ -14,6 +14,26 @@ export interface NewsItem {
 // 定时任务会自动往这个数组顶部追加新条目
 export const industryNews: NewsItem[] = [
   {
+    date: '2026-08-25',
+    tag: 'GEO行业',
+    title: 'Similarweb发布2026年Q3 AI搜索流量报告：AI引荐流量同比增长420%，GEO优化成品牌必修课',
+    summary: 'Similarweb最新数据显示，2026年Q3全球AI搜索引荐流量同比增长420%，ChatGPT Search、Perplexity、Gemini三大平台贡献超85%的AI搜索流量。品牌GEO优化投入产出比首次超过传统SEO。',
+    source: 'Similarweb / Search Engine Land',
+    content: `Similarweb于2026年8月发布2026年Q3全球AI搜索流量报告。
+
+核心数据：
+1. AI搜索引荐流量同比增长420%，环比增长65%
+2. ChatGPT Search占AI搜索流量48%，Perplexity占22%，Gemini占15%
+3. 品牌GEO优化平均投入产出比（ROI）首次超过传统SEO，达3.2倍
+4. 电商、金融、教育三大行业AI搜索流量增长最快
+5. AI搜索用户平均停留时间比传统搜索高35%，跳出率低28%
+
+品牌行动建议：
+- 将GEO优化纳入Q4核心营销预算
+- 建立AI搜索流量监测仪表盘
+- 针对不同AI平台制定差异化内容策略`,
+  },
+  {
     date: '2026-08-24',
     tag: 'GEO行业',
     title: 'CapGo AI发布2026年GEO终极指南：程序化GEO成为AI时代内容战略核心',
