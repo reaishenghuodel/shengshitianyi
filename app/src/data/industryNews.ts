@@ -33,6 +33,38 @@ export const industryNews: NewsItem[] = [
 - 建立AI搜索流量监测仪表盘
 - 针对不同AI平台制定差异化内容策略`,
   },
+  },
+  {
+    date: '2026-08-25',
+    tag: 'AI搜索',
+    title: 'DeepSeek发布V3.5版本：中文搜索准确率突破95%，挑战ChatGPT Search市场地位',
+    summary: 'DeepSeek正式发布V3.5大模型版本，中文搜索准确率达到95.2%，首次超越ChatGPT Search的93.8%。同时推出DeepSeek Search企业版，支持私有化部署和行业知识库集成。',
+    source: '36氪 / DeepSeek官方',
+    content: `DeepSeek于2026年8月25日正式发布V3.5大模型版本及DeepSeek Search企业版。
+
+核心发布：
+1. 模型升级：DeepSeek-V3.5中文搜索准确率达95.2%，首次超越ChatGPT Search
+2. 企业版：DeepSeek Search企业版支持私有化部署，集成企业知识库
+3. 多模态：新增图文混合搜索能力
+4. 生态合作：与百度、阿里、腾讯三大云平台达成深度合作
+5. 定价策略：企业版按查询量计费，单价较ChatGPT Enterprise低40%`,
+  },
+  {
+    date: '2026-08-25',
+    tag: 'AI智能体',
+    title: 'Gartner发布2026年企业AI Agent成熟度曲线：多智能体协作进入膨胀期',
+    summary: 'Gartner发布2026年AI Agent技术成熟度曲线报告，多智能体协作进入“期望膨胀期”。企业级Agent部署率从2025年的18%跃升至2026年的47%。',
+    source: 'Gartner / VentureBeat',
+    content: `Gartner于2026年8月发布《AI Agent技术成熟度曲线报告》。
+
+核心发现：
+1. 多智能体协作进入“期望膨胀期”，预计2-3年内进入“生产力高原”
+2. 企业级Agent部署率从18%跃升至47%
+3. 全球AI Agent融资总额280亿美元，同比增180%
+4. Agent记忆、Agent安全、Agent可观测性成为三大技术热点
+5. 金融32%、电商28%、制造18%为Agent渗透率最高行业`,
+  },
+  {
   {
     date: '2026-08-24',
     tag: 'GEO行业',
