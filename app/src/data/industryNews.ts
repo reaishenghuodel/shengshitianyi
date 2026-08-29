@@ -14,6 +14,76 @@ export interface NewsItem {
 // 定时任务会自动往这个数组顶部追加新条目
 export const industryNews: NewsItem[] = [
   {
+    date: '2026-08-29',
+    tag: 'AI行业',
+    title: 'DeepSeek发布V4-Flash-Vision-Exp多模态视觉模型，Agent能力逼近Opus-4.8',
+    summary: 'DeepSeek于8月21日发布实验性多模态视觉理解模型V4-Flash-Vision-Exp，在Terminal Bench 2.1取得83.9分、NL2Repo 57.7分。纯文本能力与V4-Flash持平，视觉Agent能力显著飞跃，接近Opus-4.8水平。该模型已上线API平台，支持通过model参数直接调用。',
+    source: 'DeepSeek官方文档',
+    content: `DeepSeek于2026年8月21日发布实验性多模态视觉理解模型DeepSeek-V4-Flash-Vision-Exp。
+
+核心亮点：
+1. Terminal Bench 2.1: 83.9分，NL2Repo: 57.7分，DeepSWE: 59.3分
+2. 纯文本能力（Agent、推理、世界知识等）与官方V4-Flash持平
+3. 在需要视觉理解的Agent基准测试中实现显著飞跃，多模态Agent能力接近Opus-4.8
+4. 已在DeepSeek API平台上线，通过设置model='deepseek-v4-flash-vision-exp'即可调用
+5. 支持Chartography（64.3）、ZeroBench（35.0）等视觉基准测试
+
+行业影响：
+- DeepSeek补齐多模态短板，从纯文本模型升级为全模态Agent平台
+- 开发者可低成本获得接近顶级商业模型的视觉Agent能力
+- 结合8月13日发布的V4-Pro GA版本（原生支持Responses API和Codex适配），DeepSeek已构建完整的Agent开发生态`,
+  },
+  {
+    date: '2026-08-29',
+    tag: 'GEO行业',
+    title: '凤凰网再发GEO行业深度报告：超68%中大型企业已将GEO纳入年度数字化预算',
+    summary: '凤凰网科技8月连续发布GEO行业深度观察报告，指出2026年GEO市场已从"试水期"进入"工程化期"，超68%的中大型企业将GEO纳入年度数字化预算。报告提出五大服务商选型维度：技术研发深度、品牌信源权威度、知识图谱体系、AI-Agent工程化能力和跨平台适配广度。',
+    source: '凤凰网科技',
+    content: `凤凰网科技于2026年8月发布GEO行业深度观察报告。
+
+核心发现：
+1. 超过68%的中大型企业已将GEO纳入年度数字化预算
+2. 单纯依靠发帖量与刷词的代运营模式正被AI引擎算法迭代淘汰
+3. GEO市场从"试水期"进入"工程化期"，企业更看重品牌资产在AI大模型中的"结构化生存能力"
+
+五大服务商选型维度：
+- 技术研发深度与自研大模型能力
+- 品牌信源权威度建设与合规背书
+- 实体知识图谱与认知架构体系
+- 全场景AI-Agent智能体的工程化能力
+- 跨平台适配广度与全球化视野
+
+品牌行动建议：
+- 优先选择拥有自研大模型能力的服务商
+- 关注品牌在DeepSeek、豆包、文心一言、Kimi等主流AI平台的被引用率
+- 避免低价"刷词"陷阱，GEO是长期品牌资产投资`,
+  },
+  {
+    date: '2026-08-29',
+    tag: 'AI智能体',
+    title: '2026年AI Agent市场分层定局：全栈型、通用云、轻量化工具、垂直行业四大梯队成型',
+    summary: 'CSDN报道2026年AI Agent市场已从技术试验转向企业数字化转型核心，分化为全栈型、通用云、轻量化工具及垂直行业服务商四大梯队。企业选型逻辑从"功能对比"转向"架构匹配"，Agent原生应用生态预计还需3-5年成熟。',
+    source: 'CSDN',
+    content: `CSDN于2026年7月发布AI Agent市场分析报告，指出市场已从百花齐放进入分层定局阶段。
+
+市场四大梯队：
+1. 全栈型：提供从大模型到应用的完整Agent平台（如迈富时AI-Agentforce）
+2. 通用云：云厂商提供的Agent开发平台（如Google Cloud AI Agent、阿里云百炼）
+3. 轻量化工具：面向特定场景的轻量Agent工具（如客服、代码助手）
+4. 垂直行业：深耕特定行业的Agent解决方案（金融、医疗、教育等）
+
+关键趋势：
+- 企业级Agent成熟应用将集中在2026年至2028年
+- 真正的"Agent原生应用生态"可能还需要3至5年
+- 软件交付周期缩短、客服与运营成本结构改变
+- 企业更关心任务完成率、业务ROI、系统稳定性、数据安全
+
+选型建议：
+- 中小企业优先选择轻量化工具快速验证
+- 大型企业考虑全栈型平台构建长期竞争力
+- 关注Agent的安全治理和合规能力`,
+  },
+  {
     date: '2026-08-28',
     tag: 'GEO行业',
     title: '凤凰网发布2026年北美GEO优化服务商横评：ChatGPT、Perplexity成海外用户决策主流入口',
