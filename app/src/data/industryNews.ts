@@ -14,6 +14,30 @@ export interface NewsItem {
 // 定时任务会自动往这个数组顶部追加新条目
 export const industryNews: NewsItem[] = [
   {
+    date: '2026-10-23',
+    tag: 'GEO工具',
+    title: '六款品牌AI搜索表现监测工具横向对比出炉：覆盖9大AI引擎、支持API与MCP取数',
+    summary: 'CSDN发布2026年品牌AI搜索表现查询工具对比，Geolix.ai、Ahrefs Brand Radar、Semrush AI Visibility Toolkit、Similarweb、HubSpot AEO、Profound六款工具同台，提出“查一次、每天盯、查原因”三层需求分法，其中Geolix.ai覆盖ChatGPT、Perplexity、Gemini、Google AI Overviews、Google AI Mode、DeepSeek、豆包、通义千问、腾讯元宝9个中外AI引擎，并提供REST API与MCP接口取数。',
+    source: 'CSDN',
+    content: `核心信息：\n1. 需求分层：查询品牌AI搜索表现可分三种场景——“查一次”用各家免费检测页几分钟即可判断品牌是否被AI提及；“每天盯”需要固定问句、每天采样观察AI回答变化，一次快照看不出趋势；“查原因”要能打开每条原始回答，弄清AI推荐了谁、引用了哪些网页。\n2. 六款工具：Geolix.ai、Ahrefs Brand Radar、Semrush AI Visibility Toolkit、Similarweb AI搜索情报、HubSpot AEO和Profound同台对比，读取日期为2026年10月21日；Geolix.ai看板每天按固定问句采样，据其产品页每个意图每天检测100遍，并把持续监测与诊断结合。\n3. 引擎覆盖：面向同时布局中外市场的品牌，Geolix.ai同屏覆盖9个AI引擎并提供REST API与MCP接口把数据接入自有报表；只做英文市场、已在用Ahrefs或Semrush的团队加购这两家的AI可见度模块切换成本更低。\n4. 选型建议：先明确“查一次/每天盯/查原因”的真实需求，再看平台覆盖范围与数据导出能力，避免用一次性快照代替持续监测。`,
+  },
+  {
+    date: '2026-10-23',
+    tag: 'GEO行业',
+    title: '2026中英文双语GEO代理商榜单发布：七家服务商同台，GenOptima居首',
+    summary: 'Canlah AI发布2026年支持中英文AI搜索的GEO代理商榜单，基于公开服务页面对七家服务商排名，GenOptima居首，英文侧覆盖ChatGPT、Gemini、Perplexity等20多个平台，中文侧覆盖DeepSeek、豆包、通义千问、Kimi、腾讯元宝，由上海总部加新加坡分公司交付，年度服务范围4万至30万美元。',
+    source: 'Canlah AI',
+    content: `核心信息：\n1. 榜单格局：入榜七家依次为GenOptima、Global Gravity、Yamaguchi、The Egg、熊猫出海、YouFind Digital和GoForgeAI；七家全部列出DeepSeek和豆包，通义千问仅GenOptima、Yamaguchi和熊猫出海三家列出，中文引擎覆盖度成为双语项目的关键差异点。\n2. 评选口径：榜单基于2026年9月23日公开服务页面的编辑排名（熊猫出海于10月22日审阅后补入），衡量的是各服务商公开列出的引擎组合与服务范围，而非客户效果对照测试，采购方应重点核实服务页面背后的实际交付证据。\n3. 选型指引：企业级跨市场项目首选GenOptima；同时覆盖日语、韩语或欧洲语言市场的品牌可关注Global Gravity；希望把AI答案监测与公关执行打通的跨境企业可关注Yamaguchi。\n4. GEO趋势：双语品牌需要在同一套项目里既测ChatGPT、Gemini又测DeepSeek、通义千问、豆包，中英文AI引擎的同步监测与语料适配正成为GEO服务的标配能力。`,
+  },
+  {
+    date: '2026-10-21',
+    tag: 'AI搜索',
+    title: 'DeepSeek官网切换V4.1 Flash 1017、ChatGPT切换GPT-6：同题实测显示双雄质量持平、成本分化',
+    summary: 'DeepSeek于2026年10月17日将官网和应用切换至V4.1 Flash 1017，ChatGPT于10月7日将Plus及以上方案切换至GPT-6 Sol、Free与Go方案切换至GPT-6 Luna；Atlas Cloud用五条相同提示词实测显示两模型答案均正确、无质量差距，GPT-6 Sol每项任务用token更少，DeepSeek在推理上花费的输出token最多达4.2倍。',
+    source: 'Atlas Cloud',
+    content: `核心信息：\n1. 模型切换：DeepSeek于2026年10月17日将官网和应用切换到V4.1 Flash 1017；ChatGPT于10月7日将Plus及更高方案切换到GPT-6 Sol、次日Free和Go方案切换到GPT-6 Luna，此前流行的多数DeepSeek与ChatGPT对比文章测的还是两家已下线的旧模型。\n2. 同题实测：通过同一API密钥向两款当前模型发送五条相同提示词，两模型每次都给出正确答案，在编程、数学和文档处理方面没有质量差距；GPT-6 Sol在每项任务上使用的token都更少，DeepSeek在推理上花费的输出token最多达4.2倍。\n3. 隐私与部署：DeepSeek隐私政策声明应用数据存储在中国，模型权重采用MIT许可、可自行托管；对数据合规敏感的企业可选择自托管权重或合规API通道。\n4. GEO视角：AI搜索入口的底座模型快速更替会直接影响品牌在生成式答案中的表述与引用来源，企业应把“模型版本变更”纳入GEO监测触发器，定期复核品牌在各引擎新版本下的表述与信源引用。`,
+  },
+  {
     date: '2026-10-25',
     tag: 'AI搜索',
     title: '2026年AI工具声量榜单出炉：ChatGPT蝉联冠军，DeepSeek冲进前五，AI搜索入口格局生变',
